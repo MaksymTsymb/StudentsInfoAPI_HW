@@ -5,6 +5,9 @@ using System.Text;
 
 namespace StudentsInfoBusinessLayer
 {
+    /// <summary>
+    /// Class not in use anymore
+    /// </summary>
     public class StudentsInfoTransfer : IStudentsInfoTransfer
     {
         public StudentsInfo StudentsInfoDTOToStudentsInfo(StudentsInfoDTO studentsInfoDTO)
