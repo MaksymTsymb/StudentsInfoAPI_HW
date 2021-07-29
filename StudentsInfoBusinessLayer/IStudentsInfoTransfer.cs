@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+/// <summary>
+/// Class implementing current interface is no longer in use
+/// </summary>
 namespace StudentsInfoBusinessLayer
 {
     interface IStudentsInfoTransfer
