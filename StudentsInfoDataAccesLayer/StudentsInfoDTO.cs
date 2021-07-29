@@ -11,6 +11,5 @@ namespace StudentsInfoDataAccesLayer
         public DateTime DateOfBirth { get; set; }
         public int GeneralGrade { get; set; }
         public string Nationality { get; set; }
-
     }
 }

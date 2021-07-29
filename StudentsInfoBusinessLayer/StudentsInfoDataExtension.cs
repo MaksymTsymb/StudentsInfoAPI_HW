@@ -25,7 +25,7 @@ namespace StudentsInfoBusinessLayer
             return gradeMark;
         }
 
-        public bool IsNativeResident(string nationality)
+        public bool IsCanadianResident(string nationality)
         {
             bool result = false;
             string inputNationalityLowCase = nationality.ToLower();

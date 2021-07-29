@@ -8,6 +8,6 @@ namespace StudentsInfoBusinessLayer
     {
         public char GetGradeMark(int generalGrade);
         int GetCurentAge(DateTime dateOfBirth);
-        bool IsNativeResident(string nationality);
+        bool IsCanadianResident(string nationality);
     }
 }

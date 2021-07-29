@@ -39,6 +39,8 @@ namespace WebAppHW2
             };
 
             services.AddAutoMapper(assemblies);
+            services.AddDbContext<EFCoreContext>(options =>
+            options.UseSqlServer(Configuration["ConnectionStrings: DefaultConnection"]));///////////////////////////////////////////continue point/////
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
