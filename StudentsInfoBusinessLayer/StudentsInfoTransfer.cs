@@ -19,7 +19,7 @@ namespace StudentsInfoBusinessLayer
                 DateOfBirth = studentsInfoDTO.DateOfBirth,
                 GeneralGrade = studentsInfoDTO.GeneralGrade,
                 Nationality = studentsInfoDTO.Nationality,
-                NativeResident = new StudentsInfoDataExtension().IsNativeResident(studentsInfoDTO.Nationality),
+                NativeResident = new StudentsInfoDataExtension().IsCanadianResident(studentsInfoDTO.Nationality),
                 GradeMark = new StudentsInfoDataExtension().GetGradeMark(studentsInfoDTO.GeneralGrade),
                 CurentAge = new StudentsInfoDataExtension().GetCurentAge(studentsInfoDTO.DateOfBirth)
             };

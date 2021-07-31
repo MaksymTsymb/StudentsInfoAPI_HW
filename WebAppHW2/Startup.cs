@@ -1,19 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using StudentsInfoBusinessLayer;
 using StudentsInfoDataAccesLayer;
 using System.Reflection;
-using AutoMapper;
 
 namespace WebAppHW2
 {
@@ -30,7 +23,7 @@ namespace WebAppHW2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IStudentsInfoService, StudentsInfoService>();
-            services.AddScoped<IStudentsInfoRepository, StudentsInfoRepositoryList>();
+            services.AddScoped<IStudentsInfoRepository, StudentsInfoRepositoryEFCore>();
             services.AddControllers();
 
             var assemblies = new[]
@@ -39,8 +32,9 @@ namespace WebAppHW2
             };
 
             services.AddAutoMapper(assemblies);
+
             services.AddDbContext<EFCoreContext>(options =>
-            options.UseSqlServer(Configuration["ConnectionStrings: DefaultConnection"]));////////////////////////////////////////continue point/////
+            options.UseSqlServer(Configuration["ConnectionStrings: DefaultConnection"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
