@@ -13,24 +13,27 @@ namespace StudentsInfoDataAccesLayer
         {
             dBContext = eFCoreContext;
 
-            /*dBContext.StudentsInfos.Add(new StudentsInfoDTO()
+            if (!dBContext.StudentsInfos.Any())
             {
-                Id = Guid.NewGuid(),
-                FamilyName = "Johnson",
-                DateOfBirth = DateTime.Now.AddYears(new Random().Next(-50, -20)),
-                GeneralGrade = new Random().Next(1, 101),
-                Nationality = "Canada"
-            });
+                dBContext.StudentsInfos.Add(new StudentsInfoDTO()
+                {
+                    Id = Guid.NewGuid(),
+                    FamilyName = "Kumar",
+                    DateOfBirth = DateTime.Now.AddYears(new Random().Next(-50, -20)),
+                    GeneralGrade = new Random().Next(1, 101),
+                    Nationality = "Indian"
+                });
 
-            dBContext.StudentsInfos.Add(new StudentsInfoDTO()
-            {
-                Id = Guid.NewGuid(),
-                FamilyName = "Maersk",
-                DateOfBirth = DateTime.Now.AddYears(new Random().Next(-50, -20)),
-                GeneralGrade = new Random().Next(1, 101),
-                Nationality = "CANADIAN"
-            });
-            dBContext.SaveChanges();*/
+                dBContext.StudentsInfos.Add(new StudentsInfoDTO()
+                {
+                    Id = Guid.NewGuid(),
+                    FamilyName = "Maersk",
+                    DateOfBirth = DateTime.Now.AddYears(new Random().Next(-50, -20)),
+                    GeneralGrade = new Random().Next(1, 101),
+                    Nationality = "CANADIAN"
+                });
+                dBContext.SaveChanges();
+            }
         }
 
         public Guid AddStudentsInfoDTO(StudentsInfoDTO studentsInfoDTO)

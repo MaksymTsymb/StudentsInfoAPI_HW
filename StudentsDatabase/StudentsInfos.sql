@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[StudentsInfoTable]
+﻿CREATE TABLE [dbo].[StudentsInfos]
 (
 	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
     [FamilyName] NVARCHAR(50) NOT NULL, 

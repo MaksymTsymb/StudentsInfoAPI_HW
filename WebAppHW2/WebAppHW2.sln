@@ -8,7 +8,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentsInfoBusinessLayer", "..\StudentsInfoBusinessLayer\StudentsInfoBusinessLayer.csproj", "{416C534D-ABEB-4020-ACE1-D60580CA03DE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{66B60063-09BA-4790-819D-9E43AEF4821F} = {66B60063-09BA-4790-819D-9E43AEF4821F}
-		{0AE44D74-0589-42E5-841F-E54E74411E00} = {0AE44D74-0589-42E5-841F-E54E74411E00}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentsInfoDataAccesLayer", "..\StudentsInfoDataAccesLayer\StudentsInfoDataAccesLayer.csproj", "{66B60063-09BA-4790-819D-9E43AEF4821F}"

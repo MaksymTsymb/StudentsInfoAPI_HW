@@ -58,6 +58,6 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="StudentsInfoTable.sql" />
+    <Build Include="StudentsInfos.sql" />
   </ItemGroup>
 </Project>
