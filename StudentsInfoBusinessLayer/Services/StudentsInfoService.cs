@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StudentsInfoDataAccesLayer;
 using System.Linq;
 using AutoMapper;
+using DataAccesLayer;
+using DataAccesLayer.Interfaces;
 
-namespace StudentsInfoBusinessLayer
+namespace BusinessLayer.Services
 {
     public class StudentsInfoService : IStudentsInfoService
     {
@@ -20,7 +21,6 @@ namespace StudentsInfoBusinessLayer
 
         public Guid AddStudentsInfo(StudentsInfo studentsInfo)
         {
-            //var studentsInfoDTO = new StudentsInfoTransfer().StudentsInfoToStudentsInfoDTO(studentsInfo);
             var studentsInfoDTO = mapper.Map<StudentsInfoDTO>(studentsInfo);
 
             return studentsInfoRepository.AddStudentsInfoDTO(studentsInfoDTO);
@@ -30,7 +30,6 @@ namespace StudentsInfoBusinessLayer
         {
             var studentsInfoDTOs = studentsInfoRepository.GetAll();
             var studentsInfos = studentsInfoDTOs.Select(dto => mapper.Map<StudentsInfo>(dto));
-            //var studentsInfos = studentsInfoDTOs.Select(new StudentsInfoTransfer().StudentsInfoDTOToStudentsInfo);
 
             return studentsInfos;
             
@@ -39,7 +38,6 @@ namespace StudentsInfoBusinessLayer
         public StudentsInfo GetById(Guid id)
         {
             var studentsInfoDTO = studentsInfoRepository.GetById(id);
-            //var studentsInfo = new StudentsInfoTransfer().StudentsInfoDTOToStudentsInfo(studentsInfoDTO);
             var studentsInfo = mapper.Map<StudentsInfo>(studentsInfoDTO);
 
             return studentsInfo;
@@ -70,7 +68,6 @@ namespace StudentsInfoBusinessLayer
 
         public bool Update(StudentsInfo studentsInfo)
         {
-            //var studentsInfoDTO = new StudentsInfoTransfer().StudentsInfoToStudentsInfoDTO(studentsInfo);
             var studentsInfoDTO = mapper.Map<StudentsInfoDTO>(studentsInfo);
 
             return studentsInfoRepository.Update(studentsInfoDTO);

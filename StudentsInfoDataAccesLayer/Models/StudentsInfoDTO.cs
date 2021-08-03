@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StudentsInfoDataAccesLayer
+namespace DataAccesLayer
 {
     public class StudentsInfoDTO
     {

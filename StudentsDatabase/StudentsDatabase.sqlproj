@@ -59,5 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="StudentsInfos.sql" />
+    <Build Include="UserRoles.sql" />
+    <Build Include="Roles.sql" />
+    <Build Include="Users.sql" />
+    <Build Include="GetAllUsersRoles.sql" />
   </ItemGroup>
 </Project>

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using StudentsInfoBusinessLayer;
+using BusinessLayer;
 
 namespace WebAppHW2.Controllers
 {

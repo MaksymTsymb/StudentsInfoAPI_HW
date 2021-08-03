@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using StudentsInfoDataAccesLayer;
+using DataAccesLayer;
 
-namespace StudentsInfoBusinessLayer
+namespace BusinessLayer
 {
     public class StudentsInfoProfile: Profile
     {

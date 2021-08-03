@@ -4,9 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using StudentsInfoBusinessLayer;
-using StudentsInfoDataAccesLayer;
 using System.Reflection;
+using BusinessLayer;
+using BusinessLayer.Services;
+using DataAccesLayer;
+using DataAccesLayer.Repositorys;
+using DataAccesLayer.Interfaces;
 
 namespace WebAppHW2
 {

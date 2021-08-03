@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DataAccesLayer.Interfaces;
 
-namespace StudentsInfoDataAccesLayer
+namespace DataAccesLayer.Repositorys
 {
     public class StudentsInfoRepositoryList : IStudentsInfoRepository
     {

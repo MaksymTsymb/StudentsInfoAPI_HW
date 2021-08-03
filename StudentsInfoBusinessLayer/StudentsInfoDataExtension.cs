@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StudentsInfoBusinessLayer
+namespace BusinessLayer
 {
     class StudentsInfoDataExtension : IStudentsInfoDataExtension
     {

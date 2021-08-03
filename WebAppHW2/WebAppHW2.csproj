@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudentsInfoBusinessLayer\StudentsInfoBusinessLayer.csproj" />
-    <ProjectReference Include="..\StudentsInfoDataAccesLayer\StudentsInfoDataAccesLayer.csproj" />
+    <ProjectReference Include="..\StudentsInfoBusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="..\StudentsInfoDataAccesLayer\DataAccesLayer.csproj" />
   </ItemGroup>
 
 

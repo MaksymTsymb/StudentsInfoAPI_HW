@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StudentsInfoBusinessLayer
+namespace BusinessLayer
 {
     public interface IStudentsInfoService
     {
