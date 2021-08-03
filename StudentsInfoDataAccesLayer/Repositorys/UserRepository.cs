@@ -1,11 +1,11 @@
-﻿using DataAccesLayer.Models;
+﻿using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using DataAccesLayer.Interfaces;
+using DataAccessLayer.Interfaces;
 
-namespace DataAccesLayer.Repositorys
+namespace DataAccessLayer.Repositorys
 {
     public class UserRepository : IUserRepository
     {
@@ -40,7 +40,7 @@ namespace DataAccesLayer.Repositorys
                             on user.Id equals userRole.UserId
                          join role in dbContext.Set<Role>()
                             on userRole.RoleId equals role.Id
-                         select new UserWithRole
+                         select new Models.UserWithRoles
                          {
                              Role = role.RoleName,
                              UserId = user.Id

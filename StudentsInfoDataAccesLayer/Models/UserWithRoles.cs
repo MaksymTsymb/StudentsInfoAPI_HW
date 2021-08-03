@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccesLayer.Models
+namespace DataAccessLayer.Models
 {
-    public class UserWithRole
+    public class UserWithRoles
     {
         public Guid UserId { get; set; }
-        public string Role { get; set; }
+        public IEnumerable<string> Roles { get; set; }
     }
 }

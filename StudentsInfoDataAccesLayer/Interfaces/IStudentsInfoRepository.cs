@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccesLayer.Interfaces
+namespace DataAccessLayer.Interfaces
 {
     public interface IStudentsInfoRepository
     {

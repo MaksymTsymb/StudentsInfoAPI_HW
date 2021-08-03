@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DataAccesLayer
+namespace DataAccessLayer
 {
     public class StudentsInfoDTO
     {

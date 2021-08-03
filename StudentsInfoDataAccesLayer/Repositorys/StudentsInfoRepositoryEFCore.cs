@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DataAccesLayer.Interfaces;
+using DataAccessLayer.Interfaces;
 
-namespace DataAccesLayer.Repositorys
+namespace DataAccessLayer.Repositorys
 {
     public class StudentsInfoRepositoryEFCore : IStudentsInfoRepository
     {

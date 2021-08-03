@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using AutoMapper;
-using DataAccesLayer;
-using DataAccesLayer.Interfaces;
+using DataAccessLayer;
+using DataAccessLayer.Interfaces;
+using BusinessLayer.Interfaces;
 
 namespace BusinessLayer.Services
 {

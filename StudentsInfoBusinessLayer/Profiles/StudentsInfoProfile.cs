@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using DataAccesLayer;
+using DataAccessLayer;
 
 namespace BusinessLayer
 {

@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using DataAccessLayer.Models;
 
-namespace DataAccesLayer
+namespace DataAccessLayer.Setups
 {
     public class EFCoreContext : DbContext
     {
         public DbSet<StudentsInfoDTO> StudentsInfos { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRoles> UserRoles { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public EFCoreContext(DbContextOptions<EFCoreContext> options) : base(options)
         {

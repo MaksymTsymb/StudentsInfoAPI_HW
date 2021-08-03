@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using DataAccessLayer.Models;
 
-namespace BusinessLayer
+namespace BusinessLayer.Interfaces
 {
     public interface IUserService
     {
         IEnumerable<string> GetUserRolesById(Guid userId);
+        User GetUserByLoginAndPassword(AuthenticationModel authenticationModel);
+        bool RegisterUser(User userToRegister);
     }
 }

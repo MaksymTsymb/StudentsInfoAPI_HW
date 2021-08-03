@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
     
-namespace DataAccesLayer.Models
+namespace DataAccessLayer.Models
 {
     [Keyless]
     public class UserRoles

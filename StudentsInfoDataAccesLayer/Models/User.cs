@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccesLayer.Models
+namespace DataAccessLayer.Models
 {
     public class User
     {
