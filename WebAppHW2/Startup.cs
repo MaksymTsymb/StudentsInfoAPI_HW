@@ -13,7 +13,6 @@ using BusinessLayer;
 using BusinessLayer.Interfaces;
 using BusinessLayer.Models;
 using BusinessLayer.Services;
-using BusinessLayer.JWTFolder;
 using DataAccessLayer.Repositorys;
 using DataAccessLayer.Setups;
 using DataAccessLayer.Interfaces;
@@ -32,12 +31,7 @@ namespace WebAppHW2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IStudentsInfoService, StudentsInfoService>();
-            services.AddScoped<IStudentsInfoRepository, StudentsInfoRepositoryEFCore>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<AuthenticationService, AuthenticationService>();
-            services.AddScoped<ISessionService, SessionService>();
+            services.RegisterServices();
 
             var hashSettings = Configuration.GetSection("HashSettings");
             services.Configure<HashSettings>(hashSettings);
@@ -60,25 +54,8 @@ namespace WebAppHW2
             services.Configure<AppSettings>(appSettingsSection);
 
             var appSettings = appSettingsSection.Get<AppSettings>();
-            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-            services.AddAuthentication(auth =>
-            {
-                auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.SaveToken = true;
-                options.RequireHttpsMetadata = false;
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
-                };
-            });
 
+            services.AddAuthentication();
             services.AddAuthorization();
         }
 

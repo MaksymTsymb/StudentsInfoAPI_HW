@@ -13,6 +13,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "..\StudentsInfoDataAccesLayer\DataAccessLayer.csproj", "{66B60063-09BA-4790-819D-9E43AEF4821F}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "StudentsDatabase", "..\StudentsDatabase\StudentsDatabase.sqlproj", "{0AE44D74-0589-42E5-841F-E54E74411E00}"
+	ProjectSection(ProjectDependencies) = postProject
+		{66B60063-09BA-4790-819D-9E43AEF4821F} = {66B60063-09BA-4790-819D-9E43AEF4821F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
