@@ -28,16 +28,16 @@ namespace BusinessLayer.Services
             var claims = user.Roles.Select(role => new Claim(ClaimTypes.Role, role)).ToList();
             claims.Add(new Claim(ClaimTypes.Name, user.UserId.ToString()));
 
-            var tokenDescriptor = new SecurityTokenDescriptor
+            var secTokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(
-                    new SymmetricSecurityKey(key),
-                    SecurityAlgorithms.HmacSha256Signature)
+                new SymmetricSecurityKey(key),
+                SecurityAlgorithms.HmacSha256Signature)
             };
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var token = tokenHandler.CreateToken(secTokenDescriptor);
 
             return tokenHandler.WriteToken(token);
         }

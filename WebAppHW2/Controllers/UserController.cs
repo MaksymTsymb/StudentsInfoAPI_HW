@@ -25,7 +25,7 @@ namespace WebAppHW2.Controllers
         {
             var validationResult = authService.Login(authenticationModel);
 
-            if (validationResult.IsSuccessful == false)
+            if (!validationResult.IsSuccessful)
             {
                 BadRequest("Uncorrect login or password");
                 return string.Empty;
@@ -52,6 +52,6 @@ namespace WebAppHW2.Controllers
             }
 
             return BadRequest("Invalid registration data");
-        }
+                                                                        }
     }
 }

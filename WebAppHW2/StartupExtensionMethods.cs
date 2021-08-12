@@ -19,7 +19,8 @@ namespace WebAppHW2
             services.AddScoped<IStudentsInfoRepository, StudentsInfoRepositoryEFCore>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<AuthenticationService, AuthenticationService>();
+            //services.AddScoped<AuthenticationService, AuthenticationService>();
+            services.AddScoped<IAuthService, BusinessLayer.Services.AuthenthicationService>();
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<IHashService, HashService>();
         }

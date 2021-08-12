@@ -19,12 +19,17 @@ namespace DataAccessLayer.Repositorys
             this.dbContext = dbContext;
         }
 
+        static UserRepository()
+        {
+            usersWithRoles = new List<UserWithRoles>();
+        }
+
         public IEnumerable<string> GetUserRolesById(Guid userId)
         {
-            if (usersWithRoles == null)
+            /*if (usersWithRoles == null)
             {
                 usersWithRoles = GetAllUserRoles();
-            }
+            }*/
 
             return usersWithRoles.FirstOrDefault(x => x.UserId == userId)?.Roles ?? new List<string>();
         }
