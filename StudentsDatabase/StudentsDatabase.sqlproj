@@ -63,6 +63,7 @@
     <Build Include="Tables\Users.sql" />
     <Build Include="Tables\UserRoles.sql" />
     <Build Include="Tables\StudentsInfos.sql" />
+    <Build Include="Tables\Emails.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Roles.sql" />

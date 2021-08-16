@@ -20,7 +20,7 @@ namespace BusinessLayer
                 .ForMember(x => x.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth))
                 .ForMember(x => x.GeneralGrade, opt => opt.MapFrom(src => src.GeneralGrade))
                 .ForMember(x => x.Nationality, opt => opt.MapFrom(src => src.Nationality))
-                .ForMember(x => x.CanadianResident, opt => opt.MapFrom(src => new StudentsInfoDataExtension().IsCanadianResident(src.Nationality)))
+                .ForMember(x => x.IsCanadianResident, opt => opt.MapFrom(src => new StudentsInfoDataExtension().IsCanadianResident(src.Nationality)))
                 .ForMember(x => x.GradeMark, opt => opt.MapFrom(src => new StudentsInfoDataExtension().GetGradeMark(src.GeneralGrade)))
                 .ForMember(x => x.CurentAge, opt => opt.MapFrom(src => new StudentsInfoDataExtension().GetCurentAge(src.DateOfBirth)));
         }

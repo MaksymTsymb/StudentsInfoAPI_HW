@@ -46,12 +46,20 @@ namespace WebAppHW2.Controllers
             {
                 return Ok(Login(new AuthenticationModel
                 {
-                    Login = userToRegister.Login,       
+                    Login = userToRegister.Login,
                     Password = userToRegister.Password
                 }));
             }
 
             return BadRequest("Invalid registration data");
-                                                                        }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("confirm")]
+        public IActionResult Confirm(string message)
+        {
+            var result = authService.ConfirmEmail(message);
+            return Ok(result);
+        }
     }
 }

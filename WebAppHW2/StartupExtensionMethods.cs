@@ -2,12 +2,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authentication;
-using DataAccessLayer.Interfaces;
-using DataAccessLayer.Repositorys;
 using BusinessLayer.Interfaces;
 using BusinessLayer.Models;
 using BusinessLayer.Services;
+using DataAccessLayer.Repositories;
+using DataAccessLayer.Interfaces;
 
 namespace WebAppHW2
 {
@@ -19,10 +18,12 @@ namespace WebAppHW2
             services.AddScoped<IStudentsInfoRepository, StudentsInfoRepositoryEFCore>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
-            //services.AddScoped<AuthenticationService, AuthenticationService>();
-            services.AddScoped<IAuthService, BusinessLayer.Services.AuthenthicationService>();
+            services.AddScoped<IAuthService, BusinessLayer.Services.AuthenticationService>();
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<IHashService, HashService>();
+            services.AddScoped<IMailExchangerService, MailExchangerService>();
+            services.AddScoped<IMailService, MailService>();
+            services.AddScoped<IMailRepository, MailRepository>();
         }
 
         public static void AddAuthentication(this IServiceCollection services, AppSettings appSettings)

@@ -7,13 +7,13 @@ using BusinessLayer.Models;
 
 namespace BusinessLayer.Services
 {
-    public class AuthenthicationService : IAuthService
+    public class AuthenticationService : IAuthService
     {
         private readonly IUserService userService;
         private readonly IHashService hashService;
         private readonly IMapper mapper;
 
-        public AuthenthicationService(
+        public AuthenticationService(
             IUserService userService,
             IHashService hashService,
             IMapper mapper)
@@ -21,6 +21,11 @@ namespace BusinessLayer.Services
             this.userService = userService;
             this.hashService = hashService;
             this.mapper = mapper;
+        }
+
+        public bool ConfirmEmail(string message)
+        {
+            return userService.ConfirmEmail(message);
         }
 
         public ValidationResult Login(AuthenticationModel authenticationModel)
@@ -55,9 +60,15 @@ namespace BusinessLayer.Services
             var userDTO = mapper.Map<UserDTO>(userToRegister);
             userDTO.Password = hashService.HashString(userToRegister.Password);
 
-            var response = userService.RegisterUser(userDTO);
+            var isRegistrationSuccessful = userService.RegisterUser(userDTO);
 
-            return response;
+            if (isRegistrationSuccessful &&
+                !string.IsNullOrEmpty(userToRegister.Email))
+            {
+                userService.AddUserMail(userDTO.Id, userToRegister.Email);
+            }
+
+            return isRegistrationSuccessful;
         }
 
         private bool IsPasswordValid(string password)

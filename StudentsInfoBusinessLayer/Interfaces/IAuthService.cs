@@ -7,5 +7,6 @@ namespace BusinessLayer.Interfaces
     {
         ValidationResult Login(AuthenticationModel authenticationModel);
         bool RegisterUser(User userToRegister);
+        bool ConfirmEmail(string message);
     }
 }

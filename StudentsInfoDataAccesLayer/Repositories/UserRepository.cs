@@ -1,36 +1,30 @@
-﻿using DataAccessLayer.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
+using DataAccessLayer.Models;
 using DataAccessLayer.Interfaces;
 using DataAccessLayer.Setups;
 
-namespace DataAccessLayer.Repositorys
+namespace DataAccessLayer.Repositories
 {
     public class UserRepository : IUserRepository
     {
         private static IList<UserWithRoles> usersWithRoles;
-
         private readonly EFCoreContext dbContext;
-
-        public UserRepository(EFCoreContext dbContext)
-        {
-            this.dbContext = dbContext;
-        }
 
         static UserRepository()
         {
             usersWithRoles = new List<UserWithRoles>();
         }
 
+        public UserRepository(EFCoreContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+
+
         public IEnumerable<string> GetUserRolesById(Guid userId)
         {
-            /*if (usersWithRoles == null)
-            {
-                usersWithRoles = GetAllUserRoles();
-            }*/
-
             return usersWithRoles.FirstOrDefault(x => x.UserId == userId)?.Roles ?? new List<string>();
         }
 

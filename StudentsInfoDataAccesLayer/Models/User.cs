@@ -29,5 +29,9 @@ namespace DataAccessLayer.Models
         [MinLength(5)]
         [MaxLength(50)]
         public string Password { get; set; }
+
+        //[Required]
+        public string Email { get; set; }
+
     }
 }

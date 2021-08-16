@@ -4,7 +4,7 @@ using System.Linq;
 using DataAccessLayer.Interfaces;
 using DataAccessLayer.Setups;
 
-namespace DataAccessLayer.Repositorys
+namespace DataAccessLayer.Repositories
 {
     public class StudentsInfoRepositoryEFCore : IStudentsInfoRepository
     {
