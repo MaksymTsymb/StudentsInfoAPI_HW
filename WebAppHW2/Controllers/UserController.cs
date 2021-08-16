@@ -46,7 +46,7 @@ namespace WebAppHW2.Controllers
             {
                 return Ok(Login(new AuthenticationModel
                 {
-                    Login = userToRegister.Login,
+                    Login = userToRegister.Login,       
                     Password = userToRegister.Password
                 }));
             }
