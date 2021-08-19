@@ -35,6 +35,7 @@ namespace WebAppHW2.Controllers
             return studentsInfoService.GetAll();
         }
 
+
         [Authorize(Roles = "Administrator,Student")]
         [HttpGet("{id}")]
         public StudentsInfo GetById(Guid id)

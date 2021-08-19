@@ -18,12 +18,13 @@ namespace WebAppHW2
             services.AddScoped<IStudentsInfoRepository, StudentsInfoRepositoryEFCore>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IAuthService, BusinessLayer.Services.AuthenticationService>();
+            services.AddScoped<IAuthenticationService, BusinessLayer.Services.AuthenticationService>();
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<IHashService, HashService>();
-            services.AddScoped<IMailExchangerService, MailExchangerService>();
+            services.AddScoped<IMailExchangerService, MailExchangerService>(); //MailExchangerServiceMoq -- MailExchangerService
             services.AddScoped<IMailService, MailService>();
             services.AddScoped<IMailRepository, MailRepository>();
+            services.AddScoped<IUserRolesRepository, UserRolesRepository>();
         }
 
         public static void AddAuthentication(this IServiceCollection services, AppSettings appSettings)

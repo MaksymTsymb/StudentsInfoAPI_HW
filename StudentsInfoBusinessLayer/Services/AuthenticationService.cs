@@ -3,11 +3,11 @@ using System.Text.RegularExpressions;
 using DataAccessLayer.Models;
 using BusinessLayer.Interfaces;
 using BusinessLayer.Models;
-
+using System.Linq;
 
 namespace BusinessLayer.Services
 {
-    public class AuthenticationService : IAuthService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IUserService userService;
         private readonly IHashService hashService;
@@ -23,7 +23,7 @@ namespace BusinessLayer.Services
             this.mapper = mapper;
         }
 
-        public bool ConfirmEmail(string message)
+        public ConfirmationResult ConfirmEmail(string message)
         {
             return userService.ConfirmEmail(message);
         }
@@ -43,7 +43,7 @@ namespace BusinessLayer.Services
                 userWithRoles = new UserWithRoles
                 {
                     UserId = user.Id,
-                    Roles = roles
+                    Roles = roles.ToList()
                 };
             }
 

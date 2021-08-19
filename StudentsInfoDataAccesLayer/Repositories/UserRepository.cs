@@ -63,8 +63,14 @@ namespace DataAccessLayer.Repositories
                 .Select(x => new UserWithRoles
                 {
                     UserId = x.Key,
-                    Roles = x.ToList().Select(x => x.RoleName)
+                    Roles = x.ToList().Select(x => x.RoleName).ToList()
                 }).ToList();
+        }
+
+        public void AddUserRole(AssigningRoleModel assigningRoleModel)
+        {
+            var user = usersWithRoles.First(x => x.UserId == assigningRoleModel.UserId);
+            user.Roles.Add(assigningRoleModel.RoleTitle);
         }
 
         private static void AddUserWithEmptyRoles(Guid userId)

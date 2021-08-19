@@ -10,13 +10,15 @@ namespace WebAppHW2.Controllers
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly IAuthService authService;
+        private readonly IAuthenticationService authService;
         private readonly ISessionService sessionService;
+        private readonly IUserService userService;
 
-        public UsersController(IAuthService authService, ISessionService sessionService)
+        public UsersController(IAuthenticationService authService, ISessionService sessionService, IUserService userService)
         {
             this.authService = authService;
             this.sessionService = sessionService;
+            this.userService = userService;
         }
 
         [AllowAnonymous]
@@ -59,7 +61,17 @@ namespace WebAppHW2.Controllers
         public IActionResult Confirm(string message)
         {
             var result = authService.ConfirmEmail(message);
-            return Ok(result);
+            if (result.IsSuccessful)
+            {
+                userService.AddUserRole(
+               new AssigningRoleModel
+               {
+                   UserId = result.UserId.Value,
+                   RoleTitle = "Administrator"
+               });
+            }
+
+            return Ok(result.IsSuccessful);
         }
     }
 }

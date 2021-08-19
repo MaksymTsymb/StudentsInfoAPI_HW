@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using BusinessLayer.Models;
 using DataAccessLayer.Models;
 
 namespace BusinessLayer.Interfaces
@@ -10,6 +11,7 @@ namespace BusinessLayer.Interfaces
         UserDTO GetUserByLoginAndPassword(AuthenticationModel authenticationModel);
         bool RegisterUser(UserDTO userToRegister);
         void AddUserMail(Guid userId, string mail);
-        bool ConfirmEmail(string message);
+        ConfirmationResult ConfirmEmail(string message);
+        bool AddUserRole(AssigningRoleModel addUserRoleModel);
     }
 }
